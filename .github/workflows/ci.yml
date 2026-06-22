@@ -11,11 +11,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Print Files
-        run: ls -la
-
-      - name: print
-        run: echo "Hello, World!"
+      - name: maven-build
+        uses: actions/setup-java@v4
+        with:
+            distribution: 'temurin'
+            java-version: '17'
+      - run: mvn clean package
 
 
 
