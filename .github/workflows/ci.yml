@@ -16,10 +16,3 @@ jobs:
 
       - name: print
         run: echo "Hello, World!"
-
-
-
-
-	
-
-
