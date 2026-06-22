@@ -17,10 +17,3 @@ jobs:
             distribution: 'temurin'
             java-version: '17'
       - run: mvn clean package
-
-
-
-
-	
-
-
