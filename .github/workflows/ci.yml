@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print Files
+        run: ls -la
+
+      - name: print
+        run: echo "Hello, World!"
+
+
+
+
+	
+
+
