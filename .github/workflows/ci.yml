@@ -18,9 +18,23 @@ jobs:
             java-version: '17'
       - run: mvn clean package
 
+      - name: Show Target
+        run: ls -la target
 
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+           name: my-artifact
+           path: target/*.jar
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: my-artifact
 
-	
-
-
+      - name: verify artifact
+        run: ls -la my-artifact
