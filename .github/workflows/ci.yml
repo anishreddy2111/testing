@@ -14,8 +14,8 @@ jobs:
       - name: maven-build
         uses: actions/setup-java@v4
         with:
-            distribution: 'temurin'
-            java-version: '17'
+            distribution: ${{vars.DISTRIBUTION}}
+            java-version: ${{vars.VERSION}}
       - run: mvn clean package
 
       - name: Show Target
